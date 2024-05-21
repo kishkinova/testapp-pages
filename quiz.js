@@ -47,7 +47,7 @@ document.getElementById("questions").addEventListener("click", function(event) {
             calculate_result(total_weight);
             let animationElement = document.getElementById("animation");
             animationElement.classList.add('visible');
-            setTimeout(() => window.location.href = "final.html", 300000);
+            setTimeout(() => window.location.href = "final.html", 3000);
         }
     }
     });
