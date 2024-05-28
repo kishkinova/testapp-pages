@@ -18,7 +18,17 @@
 <div class="wrapper">
     <div class="quiz">
         <div class="quiz_header">
-            <h1>WELCOME ! <span class="name"></span></h1>
+            <h1>WELCOME, <span id="userName"></span>!</h1>
+            <div class="help">
+                <svg class="svg-icon" width="30px" height="30px" viewBox="0 0 512 512"
+                     xmlns="http://www.w3.org/2000/svg"><title>help</title>
+                    <path id="path1" d="M256,80A176,176,0,1,0,432,256,176,176,0,0,0,256,80Z"
+                          style="fill:none;stroke:#000000;stroke-miterlimit:10;stroke-width:32px"/>
+                    <path d="M200,202.29s.84-17.5,19.57-32.57C230.68,160.77,244,158.18,256,158c10.93-.14,20.69,1.67,26.53,4.45,10,4.76,29.47,16.38,29.47,41.09,0,26-17,37.81-36.37,50.8S251,281.43,251,296"
+                          style="fill:none;stroke:#000000;stroke-linecap:round;stroke-miterlimit:10;stroke-width:28px"/>
+                    <circle cx="250" cy="348" r="20"/>
+                </svg>
+            </div>
         </div>
 
         <div class="quiz_body">
@@ -34,6 +44,36 @@
         </div>
     </div>
 </div>
+
+<div id="modal" class="modal-wrapper">
+    <div class="modal-block">
+        <div class="modal-close">
+            <svg width="30px" height="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M10.0303 8.96965C9.73741 8.67676 9.26253 8.67676 8.96964 8.96965C8.67675 9.26255 8.67675 9.73742 8.96964 10.0303L10.9393 12L8.96966 13.9697C8.67677 14.2625 8.67677 14.7374 8.96966 15.0303C9.26255 15.3232 9.73743 15.3232 10.0303 15.0303L12 13.0607L13.9696 15.0303C14.2625 15.3232 14.7374 15.3232 15.0303 15.0303C15.3232 14.7374 15.3232 14.2625 15.0303 13.9696L13.0606 12L15.0303 10.0303C15.3232 9.73744 15.3232 9.26257 15.0303 8.96968C14.7374 8.67678 14.2625 8.67678 13.9696 8.96968L12 10.9393L10.0303 8.96965Z" fill="#1C274C"/>
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M12 1.25C6.06294 1.25 1.25 6.06294 1.25 12C1.25 17.9371 6.06294 22.75 12 22.75C17.9371 22.75 22.75 17.9371 22.75 12C22.75 6.06294 17.9371 1.25 12 1.25ZM2.75 12C2.75 6.89137 6.89137 2.75 12 2.75C17.1086 2.75 21.25 6.89137 21.25 12C21.25 17.1086 17.1086 21.25 12 21.25C6.89137 21.25 2.75 17.1086 2.75 12Z" fill="#1C274C"/>
+            </svg>
+        </div>
+        <h1>!!HELP ME, HELP!!! HELP!!</h1>
+        <p>
+            Most people have one animal phobia or another, be it a fear of sharks thanks to sensationalist blockbusters or a horror of anything that creeps and crawls—but when it comes to which species are worth being afraid of? The answer might surprise you.
+        </p>
+        <img width="100%" alt="" src="https://media.cntraveler.com/photos/622277d14d1454296469bc0e/master/w_1600,c_limit/Hippopotamus_GettyImages-157315984.jpg">
+        <p>
+            Hippos may look like giant, bumbling things, but they are often considered Africa’s most dangerous mammal. They’re territorial, unpredictable, and armed with a mouthful of teeth sharp and strong enough to do lethal damage. If their territory is encroached—whether that be by a crocodile, another hippo, or boat full of tourists—they will aggressively defend their space. When hippos attack, they do so with canine teeth nearly 2 feet long at a pressure of 2000 pounds per square inch (a lion exerts half this much pressure when biting its hardest). As if that weren’t enough reason to steer clear, hippos sweat a red liquid that looks like blood, securing their title as most metal animal on the planet.
+        </p>
+    </div>
+</div>
+
+<script>
+    // Retrieve name from local storage
+    const name = localStorage.getItem('name');
+    const userNameSpan = document.getElementById('userName');
+    if (name) {
+        userNameSpan.textContent = name;
+    } else {
+        userNameSpan.textContent = 'Guest';
+    }
+</script>
 
 <script src="questions.js"></script>
 <script src="quiz.js"></script>

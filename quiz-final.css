@@ -1,10 +1,10 @@
-*{
- padding: 0;
- margin: 0;
- box-sizing: border-box;   
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
 
-body{
+body {
     height: 100vh;
     font-family: sans-serif;
     background-image: url(background1.svg);
@@ -30,7 +30,7 @@ h2 {
     height: 100vh;
 }
 
-.quiz{
+.quiz {
     border-radius: 20px;
     overflow: hidden;
     width: 100%;
@@ -69,21 +69,24 @@ h2 {
     background-color: #b40404;
 }
 
-.quiz_header{
+.quiz_header {
     background: #eeecec;
     padding: 12px 30px 10px;
     border-bottom-left-radius: 3px;
     border-bottom-right-radius: 3px;
     box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.1);
     z-index: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.quiz_body{
+.quiz_body {
     padding: 20px 30px;
     background-color: skyblue;
 }
 
-.option_group{
+.option_group {
     list-style-type: none;
     margin: 30px 0;
 }
@@ -99,7 +102,7 @@ h2 {
     transition: 0.4s all;
 }
 
-.option:hover{
+.option:hover {
     cursor: pointer;
     border: 2px solid #341f97;
     color: #341f97;
@@ -107,19 +110,19 @@ h2 {
     color: white;
 }
 
-.option.active{
+.option.active {
     background-color: #341f97;
     color: #fff;
 }
 
 
-.award_icon{
+.award_icon {
     display: block;
     font-size: 300px;
     color: #fff;
 }
 
-.border{
+.border {
     height: 500px;
     width: 500px;
     display: block;
@@ -148,6 +151,71 @@ h2 {
 
 .btn:hover {
     background-color: #5e3dbc;
+}
+
+.modal-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.5);
+    visibility: hidden;
+    z-index: 1;
+}
+
+.modal-wrapper.open {
+    visibility: visible;
+
+    .modal-block {
+        bottom: 60px;
+    }
+}
+
+.modal-block {
+    position: absolute;
+    bottom: -1000px;
+    right: 60px;
+    transition: all ease-in 300ms;
+    border-radius: 15px;
+    background: #fff;
+    -webkit-box-shadow: 0px 0px 18px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 0px 18px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 0px 18px 0px rgba(0, 0, 0, 0.75);
+    width: 500px;
+    min-height: 500px;
+    padding: 30px;
+
+    h1 {
+        font-size: 26px;
+        line-height: 28px;
+        margin: 0 0 20px;
+    }
+
+    p {
+        font-size: 14px;
+    }
+
+    .modal-close {
+        position: absolute;
+        right: 20px;
+        top: 20px;
+    }
+}
+
+.svg-icon.open {
+    path:nth-child(2) {
+        fill: black !important;
+    }
+
+    path:nth-child(3) {
+        stroke: white !important;
+    }
+
+    circle {
+        stroke: white !important;
+        fill: white !important;
+    }
 }
 
 /** animation **/
